@@ -20,6 +20,7 @@ var i = 0;
 var roomnumber;
 var people = 0;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const run = ()=>{
 io.on("connection", (socket) => {
   people++;
   socket.emit("userjoined");
@@ -114,3 +115,5 @@ io.on("connection", (socket) => {
 
   });
 });
+}
+module.exports = run;
